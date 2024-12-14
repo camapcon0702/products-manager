@@ -9,4 +9,162 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="bin\Debug\net8.0-windows\products-manager.deps.json" />
+    <Content Include="bin\Debug\net8.0-windows\products-manager.runtimeconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\net8.0-windows\Azure.Core.dll" />
+    <None Include="bin\Debug\net8.0-windows\Azure.Identity.dll" />
+    <None Include="bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\Humanizer.dll" />
+    <None Include="bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.Build.Locator.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.CSharp.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.CSharp.Workspaces.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.Workspaces.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Design.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.InMemory.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyModel.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll" />
+    <None Include="bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll" />
+    <None Include="bin\Debug\net8.0-windows\Mono.TextTemplating.dll" />
+    <None Include="bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\products-manager.dll" />
+    <None Include="bin\Debug\net8.0-windows\products-manager.exe" />
+    <None Include="bin\Debug\net8.0-windows\products-manager.pdb" />
+    <None Include="bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll" />
+    <None Include="bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <None Include="bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <None Include="bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <None Include="bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <None Include="bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll" />
+    <None Include="bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\System.ClientModel.dll" />
+    <None Include="bin\Debug\net8.0-windows\System.Composition.AttributedModel.dll" />
+    <None Include="bin\Debug\net8.0-windows\System.Composition.Convention.dll" />
+    <None Include="bin\Debug\net8.0-windows\System.Composition.Hosting.dll" />
+    <None Include="bin\Debug\net8.0-windows\System.Composition.Runtime.dll" />
+    <None Include="bin\Debug\net8.0-windows\System.Composition.TypedParts.dll" />
+    <None Include="bin\Debug\net8.0-windows\System.Diagnostics.DiagnosticSource.dll" />
+    <None Include="bin\Debug\net8.0-windows\System.Formats.Asn1.dll" />
+    <None Include="bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll" />
+    <None Include="bin\Debug\net8.0-windows\System.IO.Pipelines.dll" />
+    <None Include="bin\Debug\net8.0-windows\System.Memory.Data.dll" />
+    <None Include="bin\Debug\net8.0-windows\System.Runtime.Caching.dll" />
+    <None Include="bin\Debug\net8.0-windows\System.Text.Encodings.Web.dll" />
+    <None Include="bin\Debug\net8.0-windows\System.Text.Json.dll" />
+    <None Include="bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <None Include="bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\Data\" />
+  </ItemGroup>
+
 </Project>

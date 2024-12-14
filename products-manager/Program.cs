@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 namespace products_manager
 {
     internal static class Program
@@ -5,6 +7,9 @@ namespace products_manager
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
+        /// 
+
+
         [STAThread]
         static void Main()
         {
@@ -12,6 +17,7 @@ namespace products_manager
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+            //AllocConsole();
         }
     }
 }
