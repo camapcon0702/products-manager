@@ -14,6 +14,7 @@ namespace products_manager.Models
         [Key]
         public int Id { get; set; }
         public string? TenSanPham { get; set; }
+        public string HinhAnh { get; set; }
         public float DonGia { get; set; }
         public int SoLuongCon { get; set; }
         public DanhMuc DanhMuc { get; set; }
