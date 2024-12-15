@@ -29,22 +29,23 @@ namespace products_manager
         private async void Form1_Load(object sender, EventArgs e)
         {
             
-            Console.WriteLine("Thom phuc");
+            //Console.WriteLine("Thom phuc");
 
             //string hoten = Console.ReadLine();
-            string email = Console.ReadLine();
-            string matkhau = Console.ReadLine();
+            //string email = Console.ReadLine();
+            //string matkhau = Console.ReadLine();
 
             //SignupDTO signup = new SignupDTO(hoten, email, matkhau, 1);
             //Console.WriteLine(signup.ToString());
 
 
-            SigninDTO signinDTO = new SigninDTO(email, matkhau);
+            //SigninDTO signinDTO = new SigninDTO(email, matkhau);
 
             //string result = await _taiKhoanRepository.SignUp(signup);
-            string result = await _taiKhoanRepository.SignIn(signinDTO);
+            //string result = await _taiKhoanRepository.SignIn(signinDTO);
 
-            Console.WriteLine(result);
+            //Console.WriteLine(result);
+            dataGridView1.DataSource = await _taiKhoanRepository.GetAllUsers();
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)

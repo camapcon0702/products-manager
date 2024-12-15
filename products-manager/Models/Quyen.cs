@@ -16,5 +16,10 @@ namespace products_manager.Models
         public string TenQuyen { get; set; }
         public string MoTa { get; set; }
         public List<TaiKhoan> taiKhoans { get; set; } = new List<TaiKhoan>();
+
+        public override string? ToString()
+        {
+            return Id + "_" + TenQuyen;
+        }
     }
 }

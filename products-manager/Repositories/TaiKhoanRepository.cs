@@ -5,6 +5,7 @@ using products_manager.Interfaces;
 using products_manager.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,15 @@ namespace products_manager.Repositories
                 .Include(t => t.Quyen)
                 .FirstOrDefaultAsync(t => t.Email == email);
             return user;
+        }
+
+        public async Task<DataTable> GetAllUsers()
+        {
+            var users = await _context.taiKhoans
+                .Include(t => t.Quyen)
+                .ToListAsync();
+            DataTable dataTable = DataTableHelper.ToDataTable(users);
+            return dataTable;
         }
 
         public async Task<string> SignIn(SigninDTO signinDTO)
