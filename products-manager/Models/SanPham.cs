@@ -19,5 +19,6 @@ namespace products_manager.Models
         public DanhMuc DanhMuc { get; set; }
         public NhaCungCap NhaCungCap { get; set; }
         public List<ChiTietDonHang> chiTietDonHangs { get; set; } = new List<ChiTietDonHang>();
+        public List<GioHang> gioHangs { get; set; } = new List<GioHang>();
     }
 }

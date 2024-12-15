@@ -17,6 +17,7 @@ namespace products_manager.App_Data
         public DbSet<TaiKhoan> taiKhoans { get; set; }
         public DbSet<DonHang> donHangs { get; set; }
         public DbSet<ChiTietDonHang> chiTietDonHangs { get; set; }
+        public DbSet<GioHang> gioHangs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -55,6 +56,18 @@ namespace products_manager.App_Data
                 .ToTable("TaiKhoan")
                 .HasMany(t => t.donHangs)
                 .WithOne(d => d.TaiKhoan)
+                .HasForeignKey("IdTaiKhoan");
+
+            modelBuilder.Entity<SanPham>()
+                .ToTable("SanPham")
+                .HasMany(s => s.gioHangs)
+                .WithOne(c => c.SanPham)
+                .HasForeignKey("IdSanPham");
+
+            modelBuilder.Entity<TaiKhoan>()
+                .ToTable("TaiKhoan")
+                .HasMany(d => d.gioHangs)
+                .WithOne(c => c.TaiKhoan)
                 .HasForeignKey("IdTaiKhoan");
         }
 

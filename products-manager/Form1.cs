@@ -25,7 +25,7 @@ namespace products_manager
         public Form1()
         {
             InitializeComponent();
-            AllocConsole();
+            //AllocConsole();
             _context = new AppDataContext();
             _taiKhoanRepository = new TaiKhoanRepository(_context);
         }

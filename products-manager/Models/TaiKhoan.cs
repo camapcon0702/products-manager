@@ -18,6 +18,7 @@ namespace products_manager.Models
         public string? MatKhau { get; set; }
         public Quyen? Quyen { get; set; }
         public List<DonHang> donHangs { get; set; } = new List<DonHang>();
+        public List<GioHang> gioHangs { get; set; } = new List<GioHang>();
 
         public override string? ToString()
         {
