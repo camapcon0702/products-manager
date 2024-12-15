@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Azure.Core;
+using Microsoft.EntityFrameworkCore;
 using products_manager.App_Data;
 using products_manager.DTOs;
 using products_manager.Interfaces;
@@ -44,31 +45,31 @@ namespace products_manager.Repositories
             return dataTable;
         }
 
-        public async Task<string> SignIn(SigninDTO signinDTO)
+        public async Task<MsgResponse> SignIn(SigninDTO signinDTO)
         {
             var user = await FindTaiKhoanByEmail(signinDTO.Email);
             if (user == null)
             {
-                return "Invalid Email!";
+                return new MsgResponse("Invalid Email!", false);
             }
 
             bool isPasswordValid = VerifyPassword(user, signinDTO.MatKhau, user.MatKhau);
             if (!isPasswordValid)
             {
-                return "Password is incorrect";
+                return new MsgResponse("Password is incorrect", false);
             }
 
             XmlAuthorize(user);
 
-            return "Login successful!";
+            return new MsgResponse("Login successful!", true);
         }
 
-        public async Task<string> SignUp(SignupDTO signupDTO)
+        public async Task<MsgResponse> SignUp(SignupDTO signupDTO)
         {
             var isExist = await FindTaiKhoanByEmail(signupDTO.Email);
             if (isExist != null)
             {
-                return "This email already used with another account!";
+                return new MsgResponse("This email already used with another account!", false);
             }
 
             var newUser = new TaiKhoan
@@ -82,7 +83,7 @@ namespace products_manager.Repositories
             _context.taiKhoans.Add(newUser);
             await _context.SaveChangesAsync();
 
-            return "Signup successful!";
+            return new MsgResponse("Signup successful!", true);
         }
 
         public bool VerifyPassword(TaiKhoan taiKhoan, string plainPassword, string hashedPassword)

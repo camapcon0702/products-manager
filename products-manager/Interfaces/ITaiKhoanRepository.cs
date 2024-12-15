@@ -14,8 +14,8 @@ namespace products_manager.Interfaces
     {
         public string EncodePassword(TaiKhoan taiKhoan, string plainPassword);
         public bool VerifyPassword(TaiKhoan taiKhoan, string plainPassword, string hashedPassword);
-        public Task<string> SignUp(SignupDTO signupDTO);
-        public Task<string> SignIn(SigninDTO signinDTO);
+        public Task<MsgResponse> SignUp(SignupDTO signupDTO);
+        public Task<MsgResponse> SignIn(SigninDTO signinDTO);
         public Task<TaiKhoan> FindTaiKhoanByEmail(string email);
         public void XmlAuthorize(TaiKhoan taiKhoan);
         public Task<DataTable> GetAllUsers();
