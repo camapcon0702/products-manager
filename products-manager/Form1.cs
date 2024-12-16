@@ -75,7 +75,7 @@ namespace products_manager
             doc = XDocument.Load("../Data/auth.xml");
             if (result.Success)
             {
-                MessageBox.Show(result.Message);
+                MessageBox.Show(result.Message, "Thông báo");
 
                 int quyen = int.Parse(doc.Root.Element("Quyen")?.Value);
                 if (quyen == 1)
@@ -91,7 +91,7 @@ namespace products_manager
             }
             else
             {
-                MessageBox.Show(result.Message);
+                MessageBox.Show(result.Message, "Thông báo");
             }
         }
 

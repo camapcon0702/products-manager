@@ -64,6 +64,7 @@
             đơnĐãMuaToolStripMenuItem.Name = "đơnĐãMuaToolStripMenuItem";
             đơnĐãMuaToolStripMenuItem.Size = new Size(84, 20);
             đơnĐãMuaToolStripMenuItem.Text = "Đơn đã mua";
+            đơnĐãMuaToolStripMenuItem.Click += đơnĐãMuaToolStripMenuItem_Click;
             // 
             // pnKhachHang
             // 

@@ -37,7 +37,7 @@ namespace products_manager
 
         private async void FormKhachHang_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void xemSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,6 +50,11 @@ namespace products_manager
         private void giỏHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowControls(new GioHangControl());
+        }
+
+        private void đơnĐãMuaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowControls(new DonHangControl());
         }
     }
 }

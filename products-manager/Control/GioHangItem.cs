@@ -18,6 +18,7 @@ namespace products_manager.Control
         public SanPham sanPham;
         public GioHang gioHang;
         private readonly ISanPhamRepository _sanPhamRepo;
+        public event EventHandler<GioHangItem> CheckBoxCheckedChanged;
         public GioHangItem()
         {
             InitializeComponent();
@@ -40,11 +41,13 @@ namespace products_manager.Control
             lbTenSanPham.Text = sanPham.TenSanPham;
             lbGia.Text = "Giá: " + sanPham.DonGia.ToString() + "$";
             lbSoLuong.Text = "Số lượng: " + gioHang.SoLuong.ToString();
+
+            checkBox.CheckedChanged += checkBox_CheckedChanged;
         }
 
         private void checkBox_CheckedChanged(object sender, EventArgs e)
         {
-
+            CheckBoxCheckedChanged?.Invoke(this, this);
         }
     }
 }

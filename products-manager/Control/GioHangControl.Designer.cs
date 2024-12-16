@@ -31,13 +31,14 @@
             flowLayoutPanel = new FlowLayoutPanel();
             btnMua = new Button();
             btnXoa = new Button();
+            lbThanhTien = new Label();
             SuspendLayout();
             // 
             // flowLayoutPanel
             // 
-            flowLayoutPanel.Location = new Point(191, 47);
+            flowLayoutPanel.Location = new Point(236, 47);
             flowLayoutPanel.Name = "flowLayoutPanel";
-            flowLayoutPanel.Size = new Size(711, 383);
+            flowLayoutPanel.Size = new Size(600, 383);
             flowLayoutPanel.TabIndex = 0;
             // 
             // btnMua
@@ -50,6 +51,7 @@
             btnMua.TabIndex = 1;
             btnMua.Text = "Mua";
             btnMua.UseVisualStyleBackColor = true;
+            btnMua.Click += btnMua_Click;
             // 
             // btnXoa
             // 
@@ -63,10 +65,23 @@
             btnXoa.UseVisualStyleBackColor = true;
             btnXoa.Click += btnXoa_Click;
             // 
+            // lbThanhTien
+            // 
+            lbThanhTien.AutoSize = true;
+            lbThanhTien.Font = new Font("Segoe UI", 14F);
+            lbThanhTien.Location = new Point(748, 449);
+            lbThanhTien.Name = "lbThanhTien";
+            lbThanhTien.Size = new Size(63, 25);
+            lbThanhTien.TabIndex = 2;
+            lbThanhTien.Text = "label1";
+            lbThanhTien.TextAlign = ContentAlignment.MiddleRight;
+            lbThanhTien.Click += lbThanhTien_Click;
+            // 
             // GioHangControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(lbThanhTien);
             Controls.Add(btnXoa);
             Controls.Add(btnMua);
             Controls.Add(flowLayoutPanel);
@@ -82,5 +97,6 @@
         private FlowLayoutPanel flowLayoutPanel;
         private Button btnMua;
         private Button btnXoa;
+        private Label lbThanhTien;
     }
 }

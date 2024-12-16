@@ -39,11 +39,18 @@ namespace products_manager
             string hoten = txtHoten.Text;
             string email = txtEmail.Text;
             string password = txtPassword.Text;
+            string confirmPassword = txtConfirmPassword.Text;
+            if (password != confirmPassword)
+            {
+                MessageBox.Show("Mật khẩu xác nhận không chính xác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                SignupDTO signupDTO = new SignupDTO(hoten, email, password, 2);
+                MsgResponse response = await _taikhoanRepo.SignUp(signupDTO);
 
-            SignupDTO signupDTO = new SignupDTO(hoten, email, password, 2);
-            MsgResponse response = await _taikhoanRepo.SignUp(signupDTO);
-
-            MessageBox.Show(response.Message);
+                MessageBox.Show(response.Message);
+            }
         }
     }
 }
