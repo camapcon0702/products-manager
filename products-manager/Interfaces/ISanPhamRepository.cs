@@ -10,7 +10,8 @@ namespace products_manager.Interfaces
 {
     public interface ISanPhamRepository
     {
-        public Task<List<SanPham>> GetAllSanPhams();
-        public Task<List<SanPhamItem>> SanPhamsToControls();
+        public List<SanPham> GetAllSanPhams();
+        public List<SanPhamItem> SanPhamsToControls();
+        public SanPham GetSanPhamById(int idSanPham);
     }
 }

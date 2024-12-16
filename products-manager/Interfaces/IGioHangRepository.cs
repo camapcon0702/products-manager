@@ -1,4 +1,5 @@
-﻿using products_manager.DTOs;
+﻿using products_manager.Control;
+using products_manager.DTOs;
 using products_manager.Models;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,11 @@ namespace products_manager.Interfaces
 {
     public interface IGioHangRepository
     {
-        public Task<List<GioHang>> GetGioHangByUser();
-        public Task<List<GioHangDTO>> GetGioHangDTOByUser();
-        public Task CreateXMLGioHang();
+        public List<GioHang> GetGioHangByUser();
+        public List<GioHangDTO> GetGioHangDTOByUser();
+        public void CreateXMLGioHang();
         public Task UpdateGioHangFromXml(string filePath);
-
+        public List<GioHangItem> GioHangsToControls();
+        public void DeleteSanPhamFromGioHang(int idSp);
     }
 }

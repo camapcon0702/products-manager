@@ -19,14 +19,21 @@ namespace products_manager.Repositories
             _context = context;
         }
 
-        public async Task<List<SanPham>> GetAllSanPhams()
+        public List<SanPham> GetAllSanPhams()
         {
-            return await _context.sanPhams.ToListAsync();
+            return _context.sanPhams.ToList();
         }
 
-        public async Task<List<SanPhamItem>> SanPhamsToControls()
+        public SanPham GetSanPhamById(int idSanPham)
         {
-            var sanPhams = await GetAllSanPhams();
+            return _context
+                .sanPhams
+                .Find(idSanPham);
+        }
+
+        public List<SanPhamItem> SanPhamsToControls()
+        {
+            var sanPhams = GetAllSanPhams();
             var items = new List<SanPhamItem>();
             foreach (var item in sanPhams) {
                 items.Add(new SanPhamItem(item));

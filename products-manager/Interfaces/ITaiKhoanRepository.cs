@@ -19,6 +19,6 @@ namespace products_manager.Interfaces
         public Task<TaiKhoan> FindTaiKhoanByEmail(string email);
         public void XmlAuthorize(TaiKhoan taiKhoan);
         public Task<DataTable> GetAllUsers();
-        public Task<TaiKhoan> FindTaiKhoanByAuth();
+        public TaiKhoan FindTaiKhoanByAuth();
     }
 }

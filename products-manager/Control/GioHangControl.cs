@@ -16,15 +16,39 @@ namespace products_manager.Control
     public partial class GioHangControl : UserControl
     {
         private IGioHangRepository _gioHangRepo;
+        List<GioHangItem> gioHangItems;
         public GioHangControl()
         {
             InitializeComponent();
             _gioHangRepo = new GioHangRepository(new AppDataContext());
         }
 
-        private void GioHangControl_Load(object sender, EventArgs e)
+        private async void GioHangControl_Load(object sender, EventArgs e)
         {
-            _gioHangRepo.UpdateGioHangFromXml("../Data/giohang.xml");
+            await _gioHangRepo.UpdateGioHangFromXml("../Data/giohang.xml");
+            gioHangItems = _gioHangRepo.GioHangsToControls();
+            foreach (var item in gioHangItems)
+            {
+                flowLayoutPanel.Controls.Add(item);
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            for (int i = gioHangItems.Count - 1; i >= 0; i--)
+            {
+                var item = gioHangItems[i];
+                CheckBox chkSelect = item.Controls.OfType<CheckBox>().FirstOrDefault();
+
+                if (chkSelect != null && chkSelect.Checked)
+                {
+                    flowLayoutPanel.Controls.Remove(item);
+                    gioHangItems.RemoveAt(i);
+                    _gioHangRepo.DeleteSanPhamFromGioHang(item.sanPham.Id);
+                    DataHelper.DeleteSanPhamFromGioHangXML("../Data/giohang.xml", item.sanPham.Id);
+                }
+            }
+            //DataHelper.WriteToXmlFile("../Data/giohang.xml", FormKhachHang.gioHangs);
         }
     }
 }

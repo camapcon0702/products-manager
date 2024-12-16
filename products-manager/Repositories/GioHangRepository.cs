@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using products_manager.App_Data;
+using products_manager.Control;
 using products_manager.DTOs;
 using products_manager.Interfaces;
 using products_manager.Models;
@@ -22,9 +24,9 @@ namespace products_manager.Repositories
             _context = context;
             _taiKhoanRepository = new TaiKhoanRepository(context);
         }
-        public async Task CreateXMLGioHang()
+        public void CreateXMLGioHang()
         {
-            var listGioHang = await GetGioHangByUser();
+            var listGioHang = GetGioHangByUser();
 
             List<XElement> gioHangs = new List<XElement>();
 
@@ -44,19 +46,39 @@ namespace products_manager.Repositories
             root.Save("../Data/ChiTietGioHang.xml");
         }
 
-        public async Task<List<GioHang>> GetGioHangByUser()
+        public void DeleteSanPhamFromGioHang(int idSp)
         {
-            var user = await _taiKhoanRepository.FindTaiKhoanByAuth();
-            return await _context.gioHangs
-                .Include(g => g.TaiKhoan)
-                .Include(g => g.SanPham)
-                .Where(g => g.TaiKhoan == user)
-                .ToListAsync();
+            var gioHangItem = _context.gioHangs.FirstOrDefault(g => g.SanPham.Id == idSp);
+            if (gioHangItem != null)
+            {
+                _context.gioHangs.Remove(gioHangItem);
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception("Không tìm thấy sản phẩm trong giỏ hàng.");
+            }
         }
 
-        public async Task<List<GioHangDTO>> GetGioHangDTOByUser()
+
+        public List<GioHang> GetGioHangByUser()
         {
-            var gioHangs = await GetGioHangByUser();
+            var user = _taiKhoanRepository.FindTaiKhoanByAuth();
+
+            using (var context = new AppDataContext())
+            {
+
+                return context.gioHangs
+                    .Include(g => g.TaiKhoan)
+                    .Include(g => g.SanPham)
+                    .Where(g => g.TaiKhoan.Id == user.Id)
+                    .ToList();
+            }
+        }
+
+        public List<GioHangDTO> GetGioHangDTOByUser()
+        {
+            var gioHangs = GetGioHangByUser();
             var gioHangDTOs = new List<GioHangDTO>();
             foreach (var item in gioHangs)
             {
@@ -72,49 +94,77 @@ namespace products_manager.Repositories
             return gioHangDTOs;
         }
 
+        public List<GioHangItem> GioHangsToControls()
+        {
+            var gioHangs = GetGioHangByUser();
+            var items = new List<GioHangItem>();
+            foreach(var item in gioHangs)
+            {
+                items.Add(new GioHangItem(item));
+            }
+            return items;
+        }
+
         public async Task UpdateGioHangFromXml(string filePath)
         {
             try
             {
-                // Bước 1: Deserialize XML thành danh sách GioHangDTO
                 var serializer = new XmlSerializer(typeof(List<GioHangDTO>));
                 List<GioHangDTO> gioHangDTOs;
 
-                var reader = new StreamReader(filePath);
-                gioHangDTOs = (List<GioHangDTO>)serializer.Deserialize(reader);
+                using (var reader = new StreamReader(filePath))
+                {
+                    gioHangDTOs = (List<GioHangDTO>)serializer.Deserialize(reader);
+                }
+
+                int idUser = _taiKhoanRepository.FindTaiKhoanByAuth().Id;
+
+                var currentUser = await _context.taiKhoans.FindAsync(idUser);
+
+                if (currentUser == null)
+                {
+                    throw new Exception("Tài khoản hiện tại không tồn tại.");
+                }
 
                 foreach (var dto in gioHangDTOs)
                 {
                     var existingGioHang = await _context.gioHangs
                         .Include(g => g.SanPham)
-                        .FirstOrDefaultAsync(g => g.SanPham.Id == dto.IdSanPham);
+                        .FirstOrDefaultAsync(g => g.SanPham.Id == dto.IdSanPham && g.TaiKhoan.Id == currentUser.Id);
 
                     if (existingGioHang != null)
                     {
-                        //existingGioHang.SoLuong += dto.SoLuong;
+                        existingGioHang.SoLuong = dto.SoLuong;
                         existingGioHang.GiaBan = dto.GiaBan;
                     }
                     else
                     {
-                        // Thêm mới sản phẩm vào giỏ hàng
+                        var sanPham = await _context.sanPhams.FindAsync(dto.IdSanPham);
+                        if (sanPham == null)
+                        {
+                            throw new Exception($"Sản phẩm với ID {dto.IdSanPham} không tồn tại.");
+                        }
+
                         var newGioHang = new GioHang
                         {
                             SoLuong = dto.SoLuong,
                             GiaBan = dto.GiaBan,
-                            SanPham = await _context.sanPhams.FindAsync(dto.IdSanPham),
-                            TaiKhoan = await _taiKhoanRepository.FindTaiKhoanByAuth()
+                            SanPham = sanPham,
+                            TaiKhoan = currentUser
                         };
                         _context.gioHangs.Add(newGioHang);
                     }
-
-                    await _context.SaveChangesAsync();
                 }
 
+                await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+
     }
 }

@@ -37,13 +37,14 @@ namespace products_manager
 
         private async void FormKhachHang_Load(object sender, EventArgs e)
         {
-            gioHangs = await _gioHangRepo.GetGioHangDTOByUser();
-            DataHelper.WriteToXmlFile("../Data/giohang.xml", gioHangs);
+            
         }
 
         private void xemSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowControls(new ListSanPhamControl());
+            gioHangs = _gioHangRepo.GetGioHangDTOByUser();
+            DataHelper.WriteToXmlFile("../Data/giohang.xml", gioHangs);
         }
 
         private void giỏHàngToolStripMenuItem_Click(object sender, EventArgs e)
