@@ -11,6 +11,7 @@ namespace products_manager.Interfaces
     public interface INhaCungCapRepository
     {
         public Task<DataTable> GetAllNhaCungCap();
+        public Task<NhaCungCap> GetNhaCungCapById(int id);
         public Task AddNhaCungCapToXml(string nhaCungCap, string diaChi, string soDienThoai);
         public Task DeleteNhaCungCap(int id);
         public Task UpdateNhaCungCap(NhaCungCap nhaCungCap);

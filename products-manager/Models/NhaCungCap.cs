@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace products_manager.Models
 {
@@ -16,6 +17,7 @@ namespace products_manager.Models
         public string TenNhaCungCap {  get; set; }
         public string DiaChi {  get; set; }
         public string SoDienThoai { get; set; }
+        [XmlIgnore]
         public List<SanPham> sanPhams { get; set; } = new List<SanPham>();
     }
 }

@@ -118,6 +118,13 @@ namespace products_manager.Repositories
             return dataTable;
         }
 
+        public async Task<NhaCungCap> GetNhaCungCapById(int id)
+        {
+            string filePath = "../Data/NhaCungCap.xml";
+            var nhaCungCaps = ReadXmlNhaCungCap(filePath);
+            return nhaCungCaps.FirstOrDefault(d => d.Id == id);
+        }
+
         public List<NhaCungCap> ReadXmlNhaCungCap(string filePath)
         {
             try

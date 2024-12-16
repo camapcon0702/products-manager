@@ -221,5 +221,12 @@ namespace products_manager.Repositories
                 MessageBox.Show($"Có lỗi khi cập nhật danh mục trong tệp XML: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public async Task<DanhMuc> GetDanhMucById(int id)
+        {
+            string filePath = "../Data/DanhMuc.xml";
+            var danhMucs = ReadXmlDanhMuc(filePath);
+            return danhMucs.FirstOrDefault(d => d.Id == id);
+        }
     }
 }

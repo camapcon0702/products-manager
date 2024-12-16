@@ -11,6 +11,7 @@ namespace products_manager.Interfaces
     public interface IDanhMucRepository
     {
         public Task<DataTable> GetAllDanhMuc();
+        public Task<DanhMuc> GetDanhMucById(int id);
         public Task AddDanhMucToXml(string tenDanhMuc, string moTa);
         public Task DeleteDanhMuc(int id);
         public Task UpdateDanhMuc(DanhMuc danhMuc);

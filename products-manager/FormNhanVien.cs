@@ -16,13 +16,16 @@ namespace products_manager
     {
         private readonly DanhMucRepository _danhMucRepository;
         private readonly NhaCungCapRepository _nhaCungCapRepository;
+        private readonly SanPhamRepository _sanPhamRepository;
         public FormNhanVien()
         {
             InitializeComponent();
             _danhMucRepository = new DanhMucRepository(new AppDataContext());
             _nhaCungCapRepository = new NhaCungCapRepository(new AppDataContext());
+            _sanPhamRepository = new SanPhamRepository(new AppDataContext());
             _danhMucRepository.CreateXmlDanhMuc();
             _nhaCungCapRepository.CreateXmlNhaCungCap();
+            _sanPhamRepository.CreateXmlSanPham();
         }
 
         public void ShowControls(UserControl control)
@@ -57,6 +60,10 @@ namespace products_manager
                 string filePathNhaCungCap = "../Data/NhaCungCap.xml";
                 var nhaCungCaps = _nhaCungCapRepository.ReadXmlNhaCungCap(filePathNhaCungCap);
                 await _nhaCungCapRepository.UpdateDatabaseFromXml(nhaCungCaps);
+
+                string filePathSanPham = "../Data/SanPham.xml";
+                var sanPhams = _sanPhamRepository.ReadXmlSanPham(filePathSanPham);
+                await _sanPhamRepository.UpdateDatabaseFromXml(sanPhams);
 
                 MessageBox.Show("Dữ liệu đã được đồng bộ từ XML vào cơ sở dữ liệu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
