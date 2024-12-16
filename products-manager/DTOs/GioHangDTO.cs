@@ -11,6 +11,8 @@ namespace products_manager.DTOs
     {
         public int SoLuong { get; set; }
         public float GiaBan { get; set; }
-        public int SanPham { get; set; }
+        public int IdSanPham { get; set; }
+        public int IdTaiKhoan { get; set; }
+        public bool isSelected { get; set; }
     }
 }

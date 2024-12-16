@@ -28,6 +28,13 @@ namespace products_manager.Repositories
             return BCrypt.Net.BCrypt.HashPassword(plainPassword);
         }
 
+        public async Task<TaiKhoan> FindTaiKhoanByAuth()
+        {
+            XDocument doc = XDocument.Load("../Data/auth.xml");
+            int id = int.Parse(doc.Descendants("Id").FirstOrDefault()?.Value);
+            return await _context.taiKhoans.FindAsync(id);
+        }
+
         public async Task<TaiKhoan> FindTaiKhoanByEmail(string email)
         {
             var user = await _context.taiKhoans

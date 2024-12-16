@@ -1,6 +1,9 @@
-﻿using products_manager.Control;
+﻿using products_manager.App_Data;
+using products_manager.Control;
 using products_manager.DTOs;
+using products_manager.Interfaces;
 using products_manager.Models;
+using products_manager.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +18,14 @@ namespace products_manager
 {
     public partial class FormKhachHang : Form
     {
-        public static List<GioHangDTO> gioHangs = new List<GioHangDTO>();
+        public static List<GioHangDTO> gioHangs;
+        private IGioHangRepository _gioHangRepo;
         public FormKhachHang()
         {
             InitializeComponent();
             //gioHangs = new List<GioHangDTO>();
+            _gioHangRepo = new GioHangRepository(new AppDataContext());
+            _gioHangRepo.CreateXMLGioHang();
         }
 
         public void ShowControls(UserControl control)
@@ -29,14 +35,20 @@ namespace products_manager
             pnKhachHang.Controls.Add(control);
         }
 
-        private void FormKhachHang_Load(object sender, EventArgs e)
+        private async void FormKhachHang_Load(object sender, EventArgs e)
         {
-
+            gioHangs = await _gioHangRepo.GetGioHangDTOByUser();
+            DataHelper.WriteToXmlFile("../Data/giohang.xml", gioHangs);
         }
 
         private void xemSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowControls(new ListSanPhamControl());
+        }
+
+        private void giỏHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowControls(new GioHangControl());
         }
     }
 }

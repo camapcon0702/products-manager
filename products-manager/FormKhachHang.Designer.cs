@@ -57,6 +57,7 @@
             giỏHàngToolStripMenuItem.Name = "giỏHàngToolStripMenuItem";
             giỏHàngToolStripMenuItem.Size = new Size(67, 20);
             giỏHàngToolStripMenuItem.Text = "Giỏ hàng";
+            giỏHàngToolStripMenuItem.Click += giỏHàngToolStripMenuItem_Click;
             // 
             // đơnĐãMuaToolStripMenuItem
             // 

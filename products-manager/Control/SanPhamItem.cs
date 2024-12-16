@@ -35,18 +35,28 @@ namespace products_manager.Control
             var image = (Image)Properties.Resources.ResourceManager.GetObject(imageName);
             hinhAnh.Image = image;
             lbTenSanPham.Text = SanPham.TenSanPham;
-            lbGia.Text = SanPham.DonGia.ToString();
-            lbSoLuong.Text = SanPham.SoLuongCon.ToString();
+            lbGia.Text = "Giá: " + SanPham.DonGia.ToString() + "$";
+            lbSoLuong.Text = "Số lượng: " + SanPham.SoLuongCon.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            GioHangDTO gioHangDTO = new GioHangDTO();
-            gioHangDTO.SanPham = SanPham.Id;
-            gioHangDTO.SoLuong = 1;
-            gioHangDTO.GiaBan = SanPham.DonGia;
+            GioHangDTO gioHangDTO = FormKhachHang.gioHangs.FirstOrDefault(g => g.IdSanPham == SanPham.Id);
+            
+            if (gioHangDTO == null)
+            {
+                gioHangDTO = new GioHangDTO();
+                gioHangDTO.IdSanPham = SanPham.Id;
+                gioHangDTO.SoLuong = 1;
+                gioHangDTO.GiaBan = SanPham.DonGia;
 
-            FormKhachHang.gioHangs.Add(gioHangDTO);
+                FormKhachHang.gioHangs.Add(gioHangDTO);
+            }
+            else
+            {
+                gioHangDTO.SoLuong++;
+            }
+
             DataHelper.WriteToXmlFile("../Data/giohang.xml", FormKhachHang.gioHangs);
         }
     }
