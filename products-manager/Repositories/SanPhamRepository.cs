@@ -245,15 +245,18 @@ namespace products_manager.Repositories
                     else
                     {
                         // Nếu chưa có, thêm mới
-                        _context.sanPhams.Add(new SanPham
+                        var newSanPham = new SanPham
                         {
                             TenSanPham = sanPham.TenSanPham,
                             HinhAnh = sanPham.HinhAnh,
                             DonGia = sanPham.DonGia,
                             SoLuongCon = sanPham.SoLuongCon,
-                            DanhMuc = sanPham.DanhMuc,
-                            NhaCungCap = sanPham.NhaCungCap
-                        });
+                            DanhMuc = await _context.danhMucs
+                        .FirstOrDefaultAsync(d => d.Id == sanPham.DanhMuc.Id),
+                            NhaCungCap = await _context.nhaCungCaps
+                        .FirstOrDefaultAsync(n => n.Id == sanPham.NhaCungCap.Id)
+                        };
+                        _context.sanPhams.Add(newSanPham);
                     }
                 }
 
