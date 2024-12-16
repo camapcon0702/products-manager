@@ -114,7 +114,7 @@ namespace products_manager.Repositories
         public async Task<DataTable> GetAllNhaCungCap()
         {
             var nhaCungCaps = await _context.nhaCungCaps.ToListAsync();
-            DataTable dataTable = DataTableHelper.ToDataTable(nhaCungCaps);
+            DataTable dataTable = DataHelper.ToDataTable(nhaCungCaps);
             return dataTable;
         }
 

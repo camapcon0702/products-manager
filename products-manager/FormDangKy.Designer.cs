@@ -71,8 +71,8 @@
             txtPassword.Location = new Point(552, 286);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(193, 36);
-            txtPassword.TabIndex = 12;
+            txtPassword.Size = new Size(260, 36);
+            txtPassword.TabIndex = 11;
             // 
             // label3
             // 
@@ -88,7 +88,7 @@
             // 
             lb2.AutoSize = true;
             lb2.Font = new Font("Segoe UI", 16F);
-            lb2.Location = new Point(338, 289);
+            lb2.Location = new Point(313, 289);
             lb2.Name = "lb2";
             lb2.Size = new Size(114, 30);
             lb2.TabIndex = 11;
@@ -99,14 +99,14 @@
             txtEmail.Font = new Font("Segoe UI", 16F);
             txtEmail.Location = new Point(552, 224);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(193, 36);
-            txtEmail.TabIndex = 9;
+            txtEmail.Size = new Size(260, 36);
+            txtEmail.TabIndex = 10;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 16F);
-            label2.Location = new Point(338, 227);
+            label2.Location = new Point(313, 227);
             label2.Name = "label2";
             label2.Size = new Size(75, 30);
             label2.TabIndex = 8;
@@ -127,7 +127,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 16F);
-            label4.Location = new Point(338, 352);
+            label4.Location = new Point(313, 352);
             label4.Name = "label4";
             label4.Size = new Size(206, 30);
             label4.TabIndex = 11;
@@ -139,14 +139,14 @@
             txtConfirmPassword.Location = new Point(552, 349);
             txtConfirmPassword.Name = "txtConfirmPassword";
             txtConfirmPassword.PasswordChar = '*';
-            txtConfirmPassword.Size = new Size(193, 36);
+            txtConfirmPassword.Size = new Size(260, 36);
             txtConfirmPassword.TabIndex = 12;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 16F);
-            label5.Location = new Point(338, 163);
+            label5.Location = new Point(313, 163);
             label5.Name = "label5";
             label5.Size = new Size(84, 30);
             label5.TabIndex = 8;
@@ -157,7 +157,7 @@
             txtHoten.Font = new Font("Segoe UI", 16F);
             txtHoten.Location = new Point(552, 160);
             txtHoten.Name = "txtHoten";
-            txtHoten.Size = new Size(193, 36);
+            txtHoten.Size = new Size(260, 36);
             txtHoten.TabIndex = 9;
             // 
             // FormDangKy

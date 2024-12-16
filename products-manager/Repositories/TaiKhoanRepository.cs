@@ -41,7 +41,7 @@ namespace products_manager.Repositories
             var users = await _context.taiKhoans
                 .Include(t => t.Quyen)
                 .ToListAsync();
-            DataTable dataTable = DataTableHelper.ToDataTable(users);
+            DataTable dataTable = DataHelper.ToDataTable(users);
             return dataTable;
         }
 

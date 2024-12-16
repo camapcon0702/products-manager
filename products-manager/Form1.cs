@@ -25,15 +25,17 @@ namespace products_manager
         public Form1()
         {
             InitializeComponent();
-            //AllocConsole();
+            AllocConsole();
             _context = new AppDataContext();
             _taiKhoanRepository = new TaiKhoanRepository(_context);
         }
 
         private async void Form1_Load(object sender, EventArgs e)
         {
-
-            //Console.WriteLine("Thom phuc");
+            string projectPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName + "\\Resources\\images\\laptop.png";
+            Console.WriteLine(projectPath);
+            string path = "./Resources/images/laptop.png";
+            Console.WriteLine(path);
 
             //string hoten = Console.ReadLine();
             //string email = Console.ReadLine();
@@ -50,7 +52,7 @@ namespace products_manager
 
             //Console.WriteLine(result);
             //dataGridView1.DataSource = await _taiKhoanRepository.GetAllUsers();
-            
+
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)

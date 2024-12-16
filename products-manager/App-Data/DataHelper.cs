@@ -1,14 +1,16 @@
-﻿using System;
+﻿using products_manager.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace products_manager.App_Data
 {
-    public class DataTableHelper
+    public class DataHelper
     {
         public static DataTable ToDataTable<T>(IEnumerable<T> data)
         {
@@ -32,6 +34,25 @@ namespace products_manager.App_Data
             }
 
             return dataTable;
+        }
+
+        public static void WriteToXmlFile<T>(string filePath, List<T> list)
+        {
+            try
+            {
+                var serializer = new XmlSerializer(typeof(List<T>));
+
+                using (var writer = new StreamWriter(filePath))
+                {
+                    serializer.Serialize(writer, list);
+                }
+
+                Console.WriteLine("Đã tạo file XML thành công!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi khi ghi file XML: {ex.Message}");
+            }
         }
     }
 }

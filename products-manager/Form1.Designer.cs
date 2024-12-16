@@ -53,7 +53,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 16F);
-            label2.Location = new Point(360, 185);
+            label2.Location = new Point(333, 185);
             label2.Name = "label2";
             label2.Size = new Size(75, 30);
             label2.TabIndex = 1;
@@ -64,7 +64,7 @@
             txtEmail.Font = new Font("Segoe UI", 16F);
             txtEmail.Location = new Point(492, 182);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(193, 36);
+            txtEmail.Size = new Size(261, 36);
             txtEmail.TabIndex = 2;
             // 
             // txtPassword
@@ -73,7 +73,7 @@
             txtPassword.Location = new Point(492, 244);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(193, 36);
+            txtPassword.Size = new Size(261, 36);
             txtPassword.TabIndex = 4;
             txtPassword.TextChanged += textBox2_TextChanged;
             // 
@@ -81,7 +81,7 @@
             // 
             lb2.AutoSize = true;
             lb2.Font = new Font("Segoe UI", 16F);
-            lb2.Location = new Point(360, 247);
+            lb2.Location = new Point(333, 247);
             lb2.Name = "lb2";
             lb2.Size = new Size(114, 30);
             lb2.TabIndex = 3;

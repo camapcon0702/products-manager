@@ -65,5 +65,10 @@ namespace products_manager
                 MessageBox.Show($"Có lỗi khi đồng bộ dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void FormNhanVien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

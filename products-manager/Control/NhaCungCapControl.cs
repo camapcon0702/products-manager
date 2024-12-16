@@ -143,5 +143,10 @@ namespace products_manager
                 MessageBox.Show($"Có lỗi khi xóa nhà cung cấp vào XML: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -45,7 +45,8 @@
             menu.Items.AddRange(new ToolStripItem[] { hệThốngToolStripMenuItem, menuQLDM, menuQLNCC, menuQLSP, menuXMLtoSQL });
             menu.Location = new Point(0, 0);
             menu.Name = "menu";
-            menu.Size = new Size(1180, 33);
+            menu.Padding = new Padding(4, 1, 0, 1);
+            menu.Size = new Size(826, 24);
             menu.TabIndex = 0;
             menu.Text = "menu";
             // 
@@ -53,40 +54,40 @@
             // 
             hệThốngToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { menuDangXuat });
             hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
-            hệThốngToolStripMenuItem.Size = new Size(103, 29);
+            hệThốngToolStripMenuItem.Size = new Size(69, 22);
             hệThốngToolStripMenuItem.Text = "Hệ thống";
             // 
             // menuDangXuat
             // 
             menuDangXuat.Name = "menuDangXuat";
-            menuDangXuat.Size = new Size(195, 34);
+            menuDangXuat.Size = new Size(127, 22);
             menuDangXuat.Text = "Đăng xuất";
             // 
             // menuQLDM
             // 
             menuQLDM.Name = "menuQLDM";
-            menuQLDM.Size = new Size(173, 29);
+            menuQLDM.Size = new Size(117, 22);
             menuQLDM.Text = "Quản lý danh mục";
             menuQLDM.Click += menuQLDM_Click;
             // 
             // menuQLNCC
             // 
             menuQLNCC.Name = "menuQLNCC";
-            menuQLNCC.Size = new Size(200, 29);
+            menuQLNCC.Size = new Size(135, 22);
             menuQLNCC.Text = "Quản lý nhà cung cấp";
             menuQLNCC.Click += menuQLNCC_Click;
             // 
             // menuQLSP
             // 
             menuQLSP.Name = "menuQLSP";
-            menuQLSP.Size = new Size(172, 29);
+            menuQLSP.Size = new Size(115, 22);
             menuQLSP.Text = "Quản lý sản phẩm";
             menuQLSP.Click += menuQLSP_Click;
             // 
             // menuXMLtoSQL
             // 
             menuXMLtoSQL.Name = "menuXMLtoSQL";
-            menuXMLtoSQL.Size = new Size(207, 29);
+            menuXMLtoSQL.Size = new Size(139, 22);
             menuXMLtoSQL.Text = "Chuyển XML sang SQL";
             menuXMLtoSQL.Click += menuXMLtoSQL_Click;
             // 
@@ -95,23 +96,24 @@
             pnNhanVien.BackgroundImage = Properties.Resources.background;
             pnNhanVien.BackgroundImageLayout = ImageLayout.Center;
             pnNhanVien.Dock = DockStyle.Fill;
-            pnNhanVien.Location = new Point(0, 33);
+            pnNhanVien.Location = new Point(0, 24);
+            pnNhanVien.Margin = new Padding(2, 2, 2, 2);
             pnNhanVien.Name = "pnNhanVien";
-            pnNhanVien.Size = new Size(1180, 618);
+            pnNhanVien.Size = new Size(826, 367);
             pnNhanVien.TabIndex = 1;
             // 
             // FormNhanVien
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(1180, 651);
+            ClientSize = new Size(826, 391);
             Controls.Add(pnNhanVien);
             Controls.Add(menu);
             MainMenuStrip = menu;
-            Margin = new Padding(4, 5, 4, 5);
             Name = "FormNhanVien";
             Text = "FormNhanVien";
+            Load += FormNhanVien_Load;
             menu.ResumeLayout(false);
             menu.PerformLayout();
             ResumeLayout(false);

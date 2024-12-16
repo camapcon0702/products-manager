@@ -23,7 +23,7 @@ namespace products_manager.Repositories
         public async Task<DataTable> GetAllDanhMuc()
         {
             var danhMucs = await _context.danhMucs.ToListAsync();
-            DataTable dataTable = DataTableHelper.ToDataTable(danhMucs);
+            DataTable dataTable = DataHelper.ToDataTable(danhMucs);
             return dataTable;
         }
 
